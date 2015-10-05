@@ -1,0 +1,18 @@
+ <div class="col s12">
+    <ul class="tabs">
+        <li class="tab col s3" ng-repeat="item in data[0].prayers">
+            <a href="#{{ item.uid_name }}" class="active">{{ item.name }}</a>
+        </li>
+     </ul>
+ </div>
+<div ng-repeat="item in data[0].prayers">
+<div id="{{item.uid_name}}" class="col s12">
+    <h1><strong>{{item.content}}</strong></h1>
+</div>
+
+</div>
+<script>
+$(document).ready(function(){
+$('ul.tabs').tabs();
+});
+</script>

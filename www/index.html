@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html ng-app="bibleStore">
+    <head>
+        <meta charset="utf-8" />
+        <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *">-->
+
+        <!--&lt;!&ndash; Allow requests to foo.com &ndash;&gt;-->
+        <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' foo.com">-->
+
+        <!--&lt;!&ndash; Enable all requests, inline styles, and eval() &ndash;&gt;-->
+        <!--<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">-->
+
+        <!--&lt;!&ndash; Allow XHRs via https only &ndash;&gt;-->
+        <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' https:">-->
+
+        <!--&lt;!&ndash; Allow iframe to https://cordova.apache.org/ &ndash;&gt;-->
+        <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self'; frame-src 'self' https://cordova.apache.org">-->
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <!--<link rel="stylesheet" type="text/css" href="css/index.css" />-->
+        <link rel="stylesheet" href="lib/css/materialize.css">
+        <title>Bible Storage</title>
+    </head>
+    <body ng-controller="mainFrontPageCtrl">
+    <div>
+    <nav class="red lighten-1">
+        <a class = "brand-logo center">Bible App</a>
+
+        <ul id='dropdown1' class='dropdown-content'>
+            <li><a href="#!">Setting</a></li>
+            <li><a href="#!">Profile</a></li>
+            <li><a href="#!">Change</a></li>
+        </ul>
+        <ul class="right hide-on-med-and-down">
+            <li><a ng-click="catholic()">Catholic</a></li>
+            <li><a ng-click="lutheran()">Lutheran</a></li>
+            <li><a ng-click="anglican()">Anglican</a></li>
+            <li><a ng-click="kkt()">KKT</a></li>
+            <li><a ng-click="assembly()">Assemblies of God</a></li>
+         </ul>
+        <ul id="slide-out" class="side-nav z-depth-5">
+            <li><a href="#!"> <i class="small mdi-action-search"></i></a></li>
+            <li><a ng-click="catholic()">Catholic</a></li>
+            <li><a ng-click="lutheran()">Lutheran</a></li>
+            <li><a ng-click="anglican()">Anglican</a></li>
+            <li><a ng-click="kkt()">KKT</a></li>
+            <li><a ng-click="assembly()">Assemblies of God</a></li>
+            <li><a ng-click="tag()">T.A.G</a></li>
+            <li><a ng-click="living()">Living Water</a></li>
+            <li><a ng-click="sabbath()">Sabbath</a></li>
+        </ul>
+        <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+        <a href="#" class="right dropdowns" data-activates="dropdown1"><i class="small mdi-navigation-more-vert"></i></a>
+        </nav>
+        </div>
+        <ng-view><ng-view />
+
+        <script src="lib/js/jquery-2.1.1.js"></script>
+        <script src="lib/js/materialize.js"></script>
+        <script src="lib/angular.js"></script>
+        <script src="lib/angular-route.js"></script>
+        <!--<script type="text/javascript" src="cordova.js"></script>-->
+        <!--<script type="text/javascript" src="js/index.js"></script>-->
+        <script type="text/javascript" src="js/mainController.js"></script>
+        <script type="text/javascript" src="lib/js/mainControllers.js"></script>
+        <script type="text/javascript">
+            $('.button-collapse').sideNav({
+                        menuWidth: 333, // Default is 240
+                        edge: 'left', // Choose the horizontal origin
+                        closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+                    }
+            );
+            $('.dropdowns').dropdown();
+         </script>
+    </body>
+</html>
