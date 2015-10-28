@@ -34,42 +34,42 @@
         </div>
 
            <div class="col s12">
-               <div class="preloader-wrapper big active" style="margin-top: 40%;margin-left: 50%" ng-if="loadingImage">
-                    <div class="spinner-layer spinner-blue">
-                           <div class="circle-clipper left">
-                               <div class="circle"></div>
-                           </div><div class="gap-patch">
-                           <div class="circle"></div>
-                         </div><div class="circle-clipper right">
-                           <div class="circle"></div>
-                         </div>
-                       </div>
-
-                       <div class="spinner-layer spinner-red">
-                           <div class="circle-clipper left">
-                               <div class="circle"></div>
-                           </div><div class="gap-patch">
-                           <div class="circle"></div>
-                       </div><div class="circle-clipper right">
-                           <div class="circle"></div>
-                       </div>
-                       </div>
-
-                       <div class="spinner-layer spinner-yellow">
-                           <div class="circle-clipper left">
-                               <div class="circle"></div>
-                           </div><div class="gap-patch">
-                           <div class="circle"></div>
-                       </div><div class="circle-clipper right">
-                           <div class="circle"></div>
-                       </div>
-                       </div>
-                    </div>
-               </div>
-         <div ng-repeat="item in stacked" ng-if="!loadingImage">
+            <div ng-repeat="item in stacked" ng-if="!loadingImage">
                     <h6>{{item.name}}</h6>
-                    <p class="flow-text">{{item.content}}</p>
+                    <p class="flow-text" >{{item.content}}</p>
          </div>
+        </div>
+        <div class="preloader-wrapper big active" ng-if="loadingImage" style="margin-top: 50%; margin-left: 50%">
+            <div class="spinner-layer spinner-blue">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div><div class="gap-patch">
+                <div class="circle"></div>
+            </div><div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+            </div>
+
+            <div class="spinner-layer spinner-red">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div><div class="gap-patch">
+                <div class="circle"></div>
+            </div><div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+            </div>
+
+            <div class="spinner-layer spinner-yellow">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div><div class="gap-patch">
+                <div class="circle"></div>
+            </div><div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+            </div>
+        </div>
     </div>
     </div>
 

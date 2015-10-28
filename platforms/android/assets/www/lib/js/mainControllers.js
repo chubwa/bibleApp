@@ -24,6 +24,7 @@ angular.module("bibleStore")
    $scope.showAvaliabeTabs=false;
    $scope.data=[];
     $scope.churchNameClick=function(churchName,id){
+        $scope.loadingImage=true;
         $scope.data.length=0;
         $http.get(churchtabUrl+"&uid="+id)
             .success(function(newValue){
@@ -36,7 +37,8 @@ angular.module("bibleStore")
                     $scope.data;
                     console.log($scope.data);
                     $scope.$apply();
-                });
+                    $scope.loadingImage=false;
+                },2000);
              });
     }
     $scope.tableOpen=function(id){
@@ -70,8 +72,7 @@ angular.module("bibleStore")
            });
            $scope.loadingImage=false;
            console.log($scope.stacked);
-
-                },2000);
+            },2000);
           })
 
         }
