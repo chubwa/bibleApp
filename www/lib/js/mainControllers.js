@@ -8,12 +8,14 @@ angular.module("bibleStore")
     .constant("ActiveDefaultTab","active")
     .controller("mainFrontPageCtrl",function($scope,$http,$timeout,churchsetUrl,churchtabUrl,ActiveDefaultTab,churchUrl){
     $scope.sets=[];
+        $scope.loadingImagepanel=true;
     $http.get(churchsetUrl)
         .success(function(data){
              $timeout(function() {
                 $scope.sets=data;
                 $scope.$apply();
-            });
+                 $scope.loadingImagepanel=false;
+            },2000);
           })
         .error(function(error){
             $scope.sets=error;
